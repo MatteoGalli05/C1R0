@@ -1,0 +1,217 @@
+body {
+  background-color: #f1f1f1;
+}
+
+.App {
+  overflow-y: hidden;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  padding: 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 10%;
+  padding:  10px 20px;
+  margin: 10px 5%;
+  border-radius:60px; /*4,55kwVP*/
+  background-color: #c80000;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.header>* {
+  border-radius: 40px;
+  border: none;
+  padding: 20px;
+}
+
+.header > input{
+  width: 50%;
+}
+
+.header>button {
+  color: white;
+  background-color: rgb(0, 130, 255);
+}
+
+.lblProduct>span {
+  font-style: italic;
+  font-weight: 200;
+}
+
+.main {
+  overflow-y: scroll;
+  padding: 0px 50px;
+  height: 80%;
+
+}
+
+.categories{
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+.category{
+  margin: 0 10px;
+  padding: 10px;
+  border: 1px solid #c80000;
+  border-radius: 30px;
+  color: black;
+  width: fit-content;
+}
+
+.active{
+  color: white;
+  background-color: #c80000;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow-x: hidden;
+}
+
+.product {
+  font-size: 20px;
+  margin: 10px 20px;
+  border: 1px solid gray;
+  border-radius: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  transition: all .3s cubic-bezier(.215, .61, .355, 1);
+}
+
+.product:hover{
+  background-color: #c80000;
+  color:white;
+}
+
+.product>button {
+  background-color: #c80000;
+  color: #fefefe;
+  font-size: 20px;
+  border: none;
+  margin: 10px;
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  transition: all 1s cubic-bezier(.215, .61, .355, 1);
+}
+
+.product:hover > button{
+  background-color: white;
+  color: black;
+}
+
+.footer {
+  height: 10%;
+
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  font-size:xx-large;
+
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 30px 30px 0px 0px;
+
+  margin: 0;
+  padding: 5%;
+  
+}
+
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%; /* Could be more or less, depending on screen size */
+  min-height: 30%;
+  border-radius: 20px;
+}
+
+.modal-content > * {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+
+.text
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  position: absolute; top: 0;right: 100%;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (min-width:1160px) {
+  body {
+      margin: 0 30%;
+  }
+  .main {
+      padding: 50px 0;
+  }
+}
+@media (max-width:800) {
+  body {
+      margin: 0 30%;
+  }
+  .main {
+      padding: 50px 0;
+  }
+}
+
