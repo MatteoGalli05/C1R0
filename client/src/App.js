@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 
 //const socket = io.connect("http://" + "192.168.1.5" + ":3001");
-const socket = io.connect('http://172.20.10.2:3003');
+const socket = io.connect('http://172.20.10.2:3001');
 //const socket = io.connect("http://localhost:3003");
 
 
