@@ -19,7 +19,7 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
   socket.on("sendData", (data) => {
     io.emit("msg_recived", "true");
-    let dataToSave = fs.readFileSync("../order.txt") + data;
+    let dataToSave = fs.readFileSync("../order.csv") + data;
     fs.writeFileSync("../order.txt", dataToSave, (e) =>{
       if(er) throw er;
     });

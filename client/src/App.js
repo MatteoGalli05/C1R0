@@ -3,12 +3,9 @@ import Product from "./components/product";
 import io from "socket.io-client";
 import { useEffect } from "react";
 
-
-
 //const socket = io.connect("http://" + "192.168.1.5" + ":3001");
-const socket = io.connect('http://172.20.10.2:3001');
+const socket = io.connect("http://172.20.10.2:3001");
 //const socket = io.connect("http://localhost:3003");
-
 
 function App() {
   let selectedCategory = 0;
@@ -56,19 +53,17 @@ function App() {
   const sendMessage = () => {
     let TableNumber = document.getElementById("inputTable").value;
     if (TableNumber.trim().length > 0) {
-      let msg =  "Tavolo: " + TableNumber+ ";";
+      let msg = "Tavolo: " + TableNumber + ";";
       let itemOrdered = 0;
       products.forEach((prd) => {
         if (prd.amount > 0) {
           itemOrdered++;
-          msg += prd.name + ":" + prd.amount +"&";
+          msg += prd.name + ":" + prd.amount + "&";
         }
       });
       if (itemOrdered > 0) {
         msg += "\n";
         socket.emit("sendData", msg);
-        
-        
       } else {
         alert("DEVI ORDINARE ALMENO UN PRODOTTO");
       }
@@ -80,9 +75,8 @@ function App() {
   const productArea = () => {
     return (
       <ul id="prodList">
-        {products.map(
-          (item, index) => (
-            //item.category === selectedCategory ? (
+        {products.map((item, index) =>
+          item.category === selectedCategory ? (
             <li key={index}>
               <div className="product">
                 <button
@@ -136,10 +130,9 @@ function App() {
                 </button>
               </div>
             </li>
+          ) : (
+            <> </>
           )
-          //) : (
-          //   <> </>
-          //)
         )}
       </ul>
     );
@@ -172,7 +165,28 @@ function App() {
         <button onClick={sendMessage}>Send message</button>
       </div>
       <div className="main">
-        
+        <div className="categories">
+          {categories.map((element, index) => (
+            <div
+              className="category"
+              key={index+ "prodotto"}
+              id={index + "prodotto"}
+              onClick={(index) => {
+                const elements = document.getElementsByClassName("category");
+                console.log(elements);
+                for (let i = 0; i < elements.length; i++) {
+                  if (i == index) {
+                    elements[i].classList.add("active");
+                  } else {
+                    elements[i].classList.remove("active");
+                  }
+                }
+              }}
+            >
+              {element}
+            </div>
+          ))}
+        </div>
         <ul id="productArea">{productArea()}</ul>
       </div>
       <div className="footer">

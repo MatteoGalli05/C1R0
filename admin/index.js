@@ -2,7 +2,7 @@ const fs = require("fs");
 const http = require("http");
 
 function appContent() {
-  let orders = fs.readFileSync("../order.txt") + "";
+  let orders = fs.readFileSync("../order.csv") + "";
   orders = orders.split("\n");
   let innerApp = "";
   orders.forEach((element) => {

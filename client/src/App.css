@@ -1,11 +1,14 @@
 body {
   background-color: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .App {
   overflow-y: hidden;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,8 +54,8 @@ body {
 
 .main {
   overflow-y: scroll;
-  padding: 0px 50px;
-  height: 80%;
+  padding: 0px;
+  height: 100%;
 
 }
 
@@ -76,6 +79,7 @@ body {
   background-color: #c80000;
 }
 
+
 ul {
   padding: 0;
   margin: 0;
@@ -86,24 +90,27 @@ ul {
 .product {
   font-size: 20px;
   margin: 10px 20px;
-  border: 1px solid gray;
-  border-radius: 40px;
   text-align: center;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   transition: all .3s cubic-bezier(.215, .61, .355, 1);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.534);
 }
 
-.product:hover{
+.lblProduct{
+  padding: 0 50px;
   background-color: #c80000;
-  color:white;
+  color: white;
+  border: 1px solid gray;
+  border-radius: 40px;
+  min-width: 50%;
 }
 
 .product>button {
-  background-color: #c80000;
-  color: #fefefe;
+  background-color: white;
+  color: black;
   font-size: 20px;
   border: none;
   margin: 10px;
@@ -111,17 +118,19 @@ ul {
   height: 50px;
   width: 50px;
   border-radius: 100%;
-  transition: all 1s cubic-bezier(.215, .61, .355, 1);
+  transition: all .3s cubic-bezier(.215, .61, .355, 1);
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  border: 1px solid black;
 }
 
-.product:hover > button{
-  background-color: white;
-  color: black;
+.product > button:hover{
+  background-color: #c80000;
+  color: white;
+  
 }
 
 .footer {
-  height: 10%;
-
+  height: 5%;
   align-items: center;
   display: flex;
   justify-content: flex-start;
@@ -208,10 +217,12 @@ ul {
 }
 @media (max-width:800) {
   body {
-      margin: 0 30%;
+      margin: 0 
   }
   .main {
       padding: 50px 0;
   }
+
+  
 }
 
